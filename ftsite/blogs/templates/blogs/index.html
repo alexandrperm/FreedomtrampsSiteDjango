@@ -35,15 +35,29 @@
           <div class="card-header">
             Категория: {{ item.category.title }}
           </div>
+
           <div class="card-body">
-            <h5 class="card-title">{{ item.title }}}</h5>
-            <p class="card-text">{{ item.content }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="media">
+              {% if item.photo %}
+                <img src="{{ item.photo.url }}" alt="" width="350">
+              {% else %}
+                <img src="https://habrastorage.org/getpro/habr/upload_files/cc9/00e/11c/cc900e11c1815ba692faf5ce589baf95.PNG" alt="" width="350">
+              {% endif %}
+              <div class="media-body">
+                <h5 class="card-title">{{ item.title }}}</h5>
+                <p class="card-text">{{ item.content|linebreaks }}</p>
+                <a href="#" class="btn btn-primary">Читать далее</a>
+
+              </div>
+            </div>
+
           </div>
           <div class="card-footer text-muted">
             {{ item.created_at|date:"Y-m-d H-i:s" }}
           </div>
         </div>
+        {% empty %}
+            <h1>Нет данных</h1>
         {% endfor %}
       </div>
       </div>
