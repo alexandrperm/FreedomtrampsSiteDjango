@@ -1,15 +1,26 @@
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">Название сайта</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a></li>
-        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Добавить пост</a></li>
+<header class="d-flex justify-content-center p-3">
+      <ul class="nav nav-pills">
+        <li><a class="nav-link px-2 link-secondary" href="{% url 'home' %}">Главная</a></li>
+        <li><a class="nav-link px-2 link-dark" href="{% url 'posts' %}">Истории</a></li>
+        <li><a class="nav-link px-2 link-dark" href="{% url 'about' %}">О нас</a></li>
       </ul>
-    </div>
-  </div>
-</nav>
+
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+      <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" href="{% url 'add_posts' %}">Добавить пост</a></li>
+            <li><a class="dropdown-item" href="#">Настройки </a></li>
+            <li><a class="dropdown-item" href="#">Профиль</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Выход</a></li>
+          </ul>
+      </div>
+</header>
+
+

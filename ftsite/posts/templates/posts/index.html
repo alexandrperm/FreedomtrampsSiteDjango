@@ -6,19 +6,15 @@
 {% endblock %}
 
 
-{% block sidebar %}
+<!--{% block sidebar %}
 {% include 'inc/_sidebar.html' %}
-{% endblock %}
+{% endblock %}-->
 
 {% block content %}
 
-{% for item in news%}
+{% for item in posts%}
   <div class="card mb-3">
-  <div class="card-header">
-  </div>
-  <div class="card-header">
-    Категория: <a href="{{ item.category.get_absolute_url }}">{{ item.category.title }}</a>
-  </div>
+
 
   <div class="card-body">
     <div class="media">
@@ -37,7 +33,7 @@
 
   </div>
   <div class="card-footer text-muted">
-    {{ item.created_at|date:"Y-m-d H-i:s" }}
+    {{ item.created_at|date:"Y-m-d H-i:s" }}, Категория: <a href="{{ item.category.get_absolute_url }}">{{ item.category.title }}</a>
   </div>
 </div>
 {% empty %}
